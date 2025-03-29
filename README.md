@@ -10,17 +10,26 @@ Stap2:
 docker build -t mijn-crud-app:latest .
 
 Stap3:
-Pas de bicep template aan met de naam die je wilt.
+Pas de acr.bicep template aan met de naam die je wilt.
 
 Stap4:
 az deployment group create --resource-group <naamnaarkeuze> --template-file acr.bicep
 
 Stap5:
+Push de image naar ACR
 
+az acr login --name esAcr
+docker tag mijncrudapp:latest esAcr123.azurecr.io/mijncrudapp:latestdocker push esAcr123.azurecr.io/mijncrudapp:latest
 
 Stap6:
+Pass de aci.bicep file aan met jouw username en password.
+
 Stap7:
+deploy aci.bicep
+
+az deployment group create --resource-group esRg --template-file aci.bicep
+az bicep build --file aci.bicep
+
+
 Stap8:
-Stap9:
-Stap10:
-Stap11:
+Ga in portal.azure naar je container en zoek je publiek ip op, nu kan je hierna surfen.  
