@@ -23,7 +23,7 @@ docker tag mijncrudapp:latest ACRnaam.azurecr.io/mijncrudapp:latest
 docker push ACRnaam.azurecr.io/mijncrudapp:latest
 
 Stap6:
-Pass de aci.bicep file aan met jouw username en password.
+Pass de aci.bicep file aan met jouw username,password,recource group en container naam.
 
 Stap7:
 deploy aci.bicep
