@@ -13,7 +13,7 @@ Stap3:
 Pas de acr.bicep template aan met de naam die je wilt.
 
 Stap4:
-az deployment group create --resource-group <naamnaarkeuze> --template-file acr.bicep
+az deployment group create --resource-group naamnaarkeuze --template-file acr.bicep
 
 Stap5:
 Push de image naar ACR
