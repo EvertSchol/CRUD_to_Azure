@@ -13,13 +13,14 @@ Stap3:
 Pas de acr.bicep template aan met de naam die je wilt.
 
 Stap4:
-az deployment group create --resource-group naamnaarkeuze --template-file acr.bicep
+az deployment group create --resource-group RGnaam --template-file acr.bicep
 
 Stap5:
 Push de image naar ACR
 
-az acr login --name esAcr
-docker tag mijncrudapp:latest esAcr123.azurecr.io/mijncrudapp:latestdocker push esAcr123.azurecr.io/mijncrudapp:latest
+az acr login --name acrnaam
+docker tag mijncrudapp:latest ACRnaam.azurecr.io/mijncrudapp:latest
+docker push ACRnaam.azurecr.io/mijncrudapp:latest
 
 Stap6:
 Pass de aci.bicep file aan met jouw username en password.
@@ -27,7 +28,7 @@ Pass de aci.bicep file aan met jouw username en password.
 Stap7:
 deploy aci.bicep
 
-az deployment group create --resource-group esRg --template-file aci.bicep
+az deployment group create --resource-group RGnaam --template-file aci.bicep
 az bicep build --file aci.bicep
 
 
