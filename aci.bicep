@@ -59,8 +59,8 @@ resource containerGroup 'Microsoft.ContainerInstance/containerGroups@2023-05-01'
     imageRegistryCredentials: [
       {
         server: 'yourACR.azurecr.io'
-        username: InsertUsernameHere
-        password: InsertPasswordHere
+        username: InsertTokenName
+        password: InsertTokenPassword
       }
     ]
     containers: [
